@@ -3,7 +3,7 @@ name: deploy for dev
 on:
   push:
     branches:
-      - 'master'
+      - master
     paths:
       - '.github/workflows'
       - 'src/**'
