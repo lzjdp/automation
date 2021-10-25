@@ -13,13 +13,23 @@ on:
 jobs:
   deploy-dev:
     runs-on:  ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
       - name: set ssh key
         run: |
             mkdir -p ~/.ssh/
-            echo ""
+            echo "${{secrets.WFP_ID_RSA}}" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
             ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
+      - name: deploy
+        run: |
+          ssh carr@39.100.253.134
+          git remote add origin https://github.com:${{secrets.WFP_PASSWORD}}@github.com/ant-design/ant-design.git
+          git checkout dev
+          git pull origin dev
+          git remote remove origin
+
+
 
 
