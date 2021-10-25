@@ -3,7 +3,7 @@ name: deploy for dev
 on:
   push:
     branches:
-      - 'dev'
+      - 'master'
     paths:
       - '.github/workflows'
       - 'src/**'
@@ -25,6 +25,7 @@ jobs:
       - name: deploy
         run: |
           ssh carr@39.100.253.134
+          cd /home/carr
           git remote add origin https://github.com:${{secrets.WFP_PASSWORD}}@github.com/ant-design/ant-design.git
           git checkout dev
           git pull origin dev
