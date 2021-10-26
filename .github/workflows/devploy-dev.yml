@@ -18,14 +18,14 @@ jobs:
       - name: set ssh key
         run: |
             mkdir -p ~/.ssh/
-            echo "${{secrets.WFP_ID_RSA}}" > ~/.ssh/id_rsa
+            echo "${{secrets.MAC_LOCAL}}" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
             ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       - name: deploy
         run: |
-          ssh root@39.100.253.134
-          cd /home/www
-          git remote add origin https://github.com:${{secrets.WFP_PASSWORD}}@github.com/ant-design/ant-design.git
+          ssh work@39.100.253.134
+          cd /home/work
+          git remote add origin https://github.com:${{secrets.MAC_LOCAL}}@github.com/lzjdp/automation
           git pull origin master
           git remote remove origin
 
