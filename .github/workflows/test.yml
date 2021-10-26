@@ -20,4 +20,4 @@ jobs:
       - name: print node version
         run: |
           node -v
-          mpm -v
+          npm -v
