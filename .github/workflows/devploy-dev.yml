@@ -23,11 +23,10 @@ jobs:
             ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       - name: deploy
         run: |
-          ssh carr@39.100.253.134
-          cd /home/carr
+          ssh root@39.100.253.134
+          cd /home/www
           git remote add origin https://github.com:${{secrets.WFP_PASSWORD}}@github.com/ant-design/ant-design.git
-          git checkout dev
-          git pull origin dev
+          git pull origin master
           git remote remove origin
 
 
