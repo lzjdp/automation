@@ -29,7 +29,7 @@ jobs:
       - name: ssh key
         run: |
           mkdir -p ~/.ssh/
-          echo "${{secrets.MAC_LOCAL}}" > ~/.ssh/id_rsa
+          # echo "${{secrets.MAC_LOCAL}}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       # 部署
