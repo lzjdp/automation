@@ -1,20 +1,20 @@
-# name: deploy for dev
+name: deploy for dev
 
-# on:
-#   push:
-#     branches:
-#       - master
-#     paths:
-#       - '.github/workflows'
-#       - 'src/**'
-#       - 'docker-compose.yml'
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows'
+      - 'src/**'
+      - 'docker-compose.yml'
 
-# jobs:
-#   test:
-#     runs-on:  ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: set ssh key
+jobs:
+  test:
+    runs-on:  ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: set ssh key
 #         run: |
 #             mkdir -p ~/.ssh/
 #             echo "${{secrets.ECS_ROOT}}" > ~/.ssh/id_rsa
