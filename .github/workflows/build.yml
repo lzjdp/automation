@@ -6,14 +6,17 @@ on:
 
 jobs:
   build:
+    # runs-on 指定job任务运行所需要的虚拟机环境(必填字段)
     runs-on:  ubuntu-lastest
   steps:
     # 获取源码
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
     # 安装node
     - name: use Node.js
       uses: actions/setup-node@v1
+      with:
+          node-version: 13.2.0
     # 安装依赖
     - name: install
       uses: nom install
