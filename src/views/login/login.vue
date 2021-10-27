@@ -7,7 +7,9 @@ export default {
   data () {
     return {}
   },
-  metods: {}
+  metods: {
+    login () {}
+  }
 }
 </script>
 
