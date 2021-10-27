@@ -1,3 +1,9 @@
 <template>
-  <div class="navbar"></div>
+  <div class="navbar">navbar</div>
 </template>
+
+<script>
+export default {
+
+}
+</script>
