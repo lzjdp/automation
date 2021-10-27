@@ -5,5 +5,9 @@ export function getToken () {
 }
 
 export function setToken (token) {
-  return window.localStorage.setItem(tokenKey, token)
+  window.localStorage.setItem(tokenKey, token)
+}
+
+export function removeToken () {
+  window.localStorage.removeItem(tokenKey)
 }
