@@ -23,8 +23,8 @@ jobs:
             ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       - name: deploy
         run: |
-          ssh root@39.100.253.134
-          cd /home/www
+          ssh carr@39.100.253.134
+          cd /home/carr
           git remote add origin https://github.com:${{secrets.MAC_LOCAL}}@github.com/lzjdp/automation
           git pull origin master
           git remote remove origin
