@@ -6,7 +6,8 @@
 export default {
   data () {
     return {}
-  }
+  },
+  metods: {}
 }
 </script>
 
