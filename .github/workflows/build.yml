@@ -28,17 +28,17 @@ jobs:
         run: npm run build
     # 部署
       - name: Deploy
-      uses: easingthemes/ssh-deploy@v2.1.1
-      env:
-        # 私钥
-        SSH_PRIVATE_KEY: ${{ secrets.ECS_CARR }}
-        # scp参数
-        ARGS: "-avzr --delete"
-        # 源目录，编译后生成的文件目录
-        SOURCE: "./dist"
-        # 服务器ip：换成你的服务器IP
-        REMOTE_HOST: "39.100.253.134"
-        # 用户
-        REMOTE_USER: "carr"
-        # 目标地址 你在服务器上部署代码的地方
-        TARGET: "/home/carr"
+        uses: easingthemes/ssh-deploy@v2.1.1
+        env:
+          # 私钥
+          SSH_PRIVATE_KEY: ${{ secrets.ECS_CARR }}
+          # scp参数
+          ARGS: "-avzr --delete"
+          # 源目录，编译后生成的文件目录
+          SOURCE: "./dist"
+          # 服务器ip：换成你的服务器IP
+          REMOTE_HOST: "39.100.253.134"
+          # 用户
+          REMOTE_USER: "carr"
+          # 目标地址 你在服务器上部署代码的地方
+          TARGET: "/home/carr"
