@@ -28,7 +28,7 @@ jobs:
         run: npm run build
       - name: ssh key
         run: |
-          mkdir -p ~/.ssh/
+          mkdir -p ~/.ssh
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       # 部署
