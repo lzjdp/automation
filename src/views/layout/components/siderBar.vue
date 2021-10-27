@@ -9,6 +9,7 @@ export default {
       name: ''
     }
   },
+  mounted () {},
   methods: {
 
   }
