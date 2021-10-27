@@ -26,7 +26,14 @@ jobs:
       # 打包
       - name: npm build
         run: npm run build
-    # 部署
+      # set ssh key
+      - name: set ssh key
+        run: |
+            mkdir -p ~/.ssh/
+            echo "${{secrets.ECS_CARR}}" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
+      # 部署
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.1.1
         env:
