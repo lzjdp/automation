@@ -28,7 +28,7 @@ jobs:
         run: npm run build
       - name: Setup knownhosts
         run: |
-            vim ~/.ssh/known_hosts
+            mkdir -p ~/.ssh/
             ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       # 部署
       - name: Deploy
