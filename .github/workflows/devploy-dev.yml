@@ -17,14 +17,14 @@ jobs:
       - name: set ssh key
         run: |
             mkdir -p ~/.ssh/
-            echo "${{secrets.ECS_CARR}}" > ~/.ssh/id_rsa
+            echo "${{secrets.MAC_LOCAL}}" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
             ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       - name: deploy
         run: |
           ssh carr@39.100.253.134
           cd /home/carr
-          git remote add origin https://github.com:${{secrets.ECS_CARR}}@github.com/lzjdp/automation
+          git remote add origin https://github.com:${{secrets.MAC_LOCAL}}@github.com/lzjdp/automation
           git pull origin master
           git remote remove origin
 
