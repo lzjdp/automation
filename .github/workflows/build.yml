@@ -26,6 +26,8 @@ jobs:
       # 打包
       - name: npm build
         run: npm run build
+      - name: ssh key
+        run: ssh-keyscan "39.100.253.134" >> ~/.ssh/known_hosts
       # 部署
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.1.1
