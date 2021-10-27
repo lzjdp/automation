@@ -10,7 +10,7 @@ jobs:
     runs-on:  ubuntu-lastest
   steps:
     # 获取源码
-    - name: Checkout
+    - name: checkout
       uses: actions/checkout@v2
     # 安装node
     - name: use Node.js
