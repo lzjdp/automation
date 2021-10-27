@@ -26,10 +26,10 @@ jobs:
       # 打包
       - name: npm build
         run: npm run build
-      - name: Connect to server
-        uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.MAC_LOCAL }}
+      # - name: Connect to server
+      #   uses: webfactory/ssh-agent@v0.4.1
+      #   with:
+      #     ssh-private-key: ${{secrets.MAC_LOCAL}}
       - name: Setup knownhosts
         run: |
             mkdir -p ~/.ssh/

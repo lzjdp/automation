@@ -9,9 +9,13 @@ export default {
     Navbar
   },
   data () {
-    return {}
+    return {
+
+    }
   },
   mounted () {},
-  methods: {}
+  methods: {
+    get () {}
+  }
 }
 </script>
