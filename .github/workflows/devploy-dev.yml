@@ -24,9 +24,9 @@ jobs:
         run: |
           ssh carr@39.100.253.134
           cd /home/carr
-          git remote add origin https://github.com:${{secrets.MAC_LOCAL}}@github.com/lzjdp/automation
-          git pull origin master
-          git remote remove origin
+          # git remote add origin https://github.com:${{secrets.MAC_LOCAL}}@github.com/lzjdp/automation
+          # git pull origin master
+          # git remote remove origin
 
 
 
